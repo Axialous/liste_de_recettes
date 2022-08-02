@@ -1,5 +1,7 @@
+/* INITIALISATION */
+
 *{
-    color: black;
+    color: hsl(0, 0%, 25%);
     font-family: Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -7,8 +9,10 @@
 
     box-sizing: border-box;
     text-decoration: none;
+    text-align: left;
     background: none;
     appearance: none;
+    list-style-type: none;
 
     padding: 0;
     border: 0;
@@ -17,4 +21,275 @@
 
 *:focus {
     outline: none;
+}
+
+/* ÉLÉMENTS GÉNÉRAUX */
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+nav button {
+    border-radius: 9px;
+
+    outline: solid 2px hsla(33, 100%, 50%, 0%);
+    outline-offset: 5px;
+
+    width: fit-content;
+
+    cursor: pointer;
+
+    transition: 250ms;
+}
+
+nav button:hover, nav button:focus {
+    color: hsl(33, 100%, 50%);
+
+    outline: solid 2px hsla(33, 100%, 50%, 50%);
+    outline-offset: 5px;
+}
+
+.grisee {
+    filter: grayscale(75%);
+}
+
+/* STRUCTURE GÉNÉRALE */
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+header, footer {
+    padding: 30px 15vw;
+
+    transition: padding 250ms;
+}
+
+main > section {
+    padding: 0 calc(15vw - 30px);
+
+    transition: padding 250ms;
+}
+
+@media screen and (max-width: 1024px) {
+    header, footer {
+        padding: 30px;
+    }
+
+    main > section {
+        padding: 0;
+    }
+}
+
+/* EN-TÊTE */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: lightgray;
+}
+
+header input[type=checkbox] {
+    display: none;
+
+    background: url(images/icones/menu.svg) center no-repeat;
+    background-size: contain;
+
+    outline: solid 2px hsla(30, 0%, 50%, 0%);
+    border: solid 1px hsl(30, 0%, 50%);
+    border-radius: 50%;
+
+    width: 46px;
+    height: 46px;
+
+    transition: 250ms;
+}
+
+header input[type=checkbox]:hover, header input[type=checkbox]:checked {
+    outline: solid 2px hsla(33, 100%, 50%, 50%);
+    border: solid 1px hsl(33, 100%, 50%);
+}
+
+header nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 25px;
+
+    background-color: white;
+    
+    padding: 15px 25px;
+}
+
+@media screen and (max-width: 512px) {
+
+    header input[type=checkbox] {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateY(100%);
+
+        grid-auto-flow: row;
+        gap: 15px;
+
+        width: 0;
+
+        padding: 15px 0;
+
+        overflow: hidden;
+
+        transition: width 500ms;
+    }
+
+    header nav > * {
+        margin: 0 30px;
+    }
+
+    header input:checked + nav {
+        width: 100%;
+    }
+}
+
+/* LISTE DES RECETTES */
+
+#liste-recettes > ul {
+    display: grid;
+    gap: 25px;
+    
+    padding: 30px;
+}
+
+.resume-recette {
+    display: grid;
+    gap: 15px;
+
+    background-color: lightgray;
+
+    padding: 25px;
+
+    transition: 125ms;
+}
+
+.resume-recette:hover, .resume-recette:focus {
+    transform: scale(101%);
+}
+
+.resume-recette p {
+    font-style: oblique;
+}
+
+.resume-recette ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resume-recette ul li {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3px;
+
+    font-weight: 600;
+}
+
+.resume-recette ul img {
+    width: 18px;
+    height: 18px;
+}
+
+@media screen and (max-width: 512px) {
+
+    .resume-recette ul {
+        display: grid;
+        gap: 10px;
+    }
+
+    .resume-recette ul li {
+        width: min-content;
+    }
+}
+
+/* CONSULTATION D'UNE RECETTE */
+
+#consultation-recette > article {
+    display: grid;
+    gap: 25px;
+    
+    padding: 30px;
+}
+
+#consultation-recette article section {
+    display: grid;
+    gap: 10px;
+}
+
+#consultation-recette ul{
+    display: grid;
+    gap: 7px;
+}
+
+#consultation-recette ul li {
+    list-style-type: '– ';
+
+    margin-left: 38px;
+}
+
+#consultation-recette ol {
+    display: grid;
+    gap: 13px;
+}
+
+#consultation-recette ol li {
+    list-style-type: decimal;
+
+    margin-left: 38px;
+}
+
+#consultation-recette ol p {
+    text-align: justify;
+}
+
+#consultation-recette nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 25px;
+
+    background-color: lightgray;
+
+    width: fit-content;
+    
+    padding: 15px 25px;
+}
+
+/* PIED DE PAGE */
+
+footer {
+    display: flex;
+    justify-content: center;
+
+    background-color: gray;
+}
+
+footer p {
+    color: white;
 }
