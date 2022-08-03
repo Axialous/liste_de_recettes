@@ -33,6 +33,24 @@ h2 {
     font-size: 22px;
 }
 
+button {
+    cursor: pointer;
+}
+
+:not(nav, li) > button,
+:not(nav) > input {
+    outline: solid 2px hsla(30, 0%, 50%, 0%);
+    border: solid 1px hsl(30, 0%, 50%);
+
+    transition: 250ms;
+}
+
+:not(nav, li) > button:hover, :not(nav, li) > button:focus,
+:not(nav) > input:hover, :not(nav, header) > input:focus, :not(nav) > input:checked {
+    outline: solid 2px hsla(33, 100%, 50%, 50%);
+    border: solid 1px hsl(33, 100%, 50%);
+}
+
 nav button {
     border-radius: 9px;
 
@@ -40,8 +58,6 @@ nav button {
     outline-offset: 5px;
 
     width: fit-content;
-
-    cursor: pointer;
 
     transition: 250ms;
 }
@@ -67,7 +83,13 @@ body {
 }
 
 main {
+    position: relative;
+
     flex: 1;
+
+    background-color: white;
+
+    overflow: hidden;
 }
 
 header, footer {
@@ -112,20 +134,11 @@ header input[type=checkbox] {
 
     background: url(images/icones/menu.svg) center no-repeat;
     background-size: contain;
-
-    outline: solid 2px hsla(30, 0%, 50%, 0%);
-    border: solid 1px hsl(30, 0%, 50%);
+    
     border-radius: 50%;
 
     width: 46px;
     height: 46px;
-
-    transition: 250ms;
-}
-
-header input[type=checkbox]:hover, header input[type=checkbox]:checked {
-    outline: solid 2px hsla(33, 100%, 50%, 50%);
-    border: solid 1px hsl(33, 100%, 50%);
 }
 
 header nav {
@@ -172,6 +185,22 @@ header nav {
 }
 
 /* LISTE DES RECETTES */
+
+#liste-recettes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    animation: liste-part 1500ms;
+}
+
+#liste-recettes.visible {
+    position: relative;
+    z-index: auto;
+
+    animation: liste-arrive 1500ms;
+}
 
 #liste-recettes > ul {
     display: grid;
@@ -231,6 +260,38 @@ header nav {
 
 /* CONSULTATION D'UNE RECETTE */
 
+#consultation-recette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    animation: recette-part 1500ms;
+}
+
+#consultation-recette.visible {
+    position: relative;
+    z-index: auto;
+
+    animation: recette-arrive 1500ms;
+}
+
+#consultation-recette > button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    border-radius: 50%;
+
+    width: 64px;
+    height: 64px;
+}
+
+#consultation-recette > button img {
+    width: 100%;
+    height: 100%;
+}
+
 #consultation-recette > article {
     display: grid;
     gap: 25px;
@@ -281,6 +342,21 @@ header nav {
     padding: 15px 25px;
 }
 
+@media screen and (max-width: 1024px) {
+
+    #consultation-recette > button {
+        left: auto;
+        right: 30px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+    #consultation-recette article h1 {
+        width: calc(100% - 76px);
+    }
+}
+
 /* PIED DE PAGE */
 
 footer {
@@ -292,4 +368,46 @@ footer {
 
 footer p {
     color: white;
+}
+
+/* ANIMATIONS */
+
+@keyframes liste-part {
+    from {
+        z-index: auto;
+        transform: translateX(0);
+    }
+    to {
+        z-index: auto;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes liste-arrive {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes recette-part {
+    from {
+        z-index: auto;
+        transform: translateX(0);
+    }
+    to {
+        z-index: auto;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes recette-arrive {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
