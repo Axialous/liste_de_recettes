@@ -88,8 +88,21 @@
                         </ol>
                     </section>
                     <nav>
-                        <button>Éditer</button>
-                        <button>Supprimer</button>
+                        <div id="edition">
+                            <button onclick="demander_confirmation_edition()">Éditer</button>
+                            <div>
+                                <button><img src="images/icones/annuler.svg" alt="X"></button>
+                                <button><img src="images/icones/valider.svg" alt="V"></button>
+                            </div>
+                        </div>
+
+                        <div id="suppression">
+                            <button onclick="demander_confirmation_suppression()">Supprimer</button>
+                            <div>
+                                <button><img src="images/icones/annuler.svg" alt="X"></button>
+                                <button><img src="images/icones/valider.svg" alt="V"></button>
+                            </div>
+                        </div>
                     </nav>
                 </article>
             </section>

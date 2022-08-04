@@ -51,19 +51,72 @@ button {
     border: solid 1px hsl(33, 100%, 50%);
 }
 
+nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 25px;
+
+    padding: 15px 25px;
+
+    width: fit-content;
+}
+
+nav div {
+    display: grid;
+    gap: 0px;
+
+    transition: 250ms 125ms;
+}
+
+nav div.options-visibles div, nav div.options-visibles {
+    gap: 15px;
+
+    transition: 250ms;
+}
+
+nav div div img {
+    height: 0;
+    overflow: hidden;
+
+    transition: 250ms;
+}
+
+nav div.options-visibles div img {
+    height: 24px;
+
+    transition: 250ms 125ms;
+}
+
 nav button {
+    display: flex;
+    flex-direction: column;
+
+    border: none;
     border-radius: 9px;
 
     outline: solid 2px hsla(33, 100%, 50%, 0%);
     outline-offset: 5px;
 
     width: fit-content;
+    height: fit-content;
 
     transition: 250ms;
 }
 
+nav div div button {
+    outline: none;
+}
+
+nav div div button:hover, nav div div button:focus {
+    outline: none;
+
+    padding-left: 20px;
+}
+
 nav button:hover, nav button:focus {
     color: hsl(33, 100%, 50%);
+
+    border: none;
 
     outline: solid 2px hsla(33, 100%, 50%, 50%);
     outline-offset: 5px;
@@ -142,13 +195,7 @@ header input[type=checkbox] {
 }
 
 header nav {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 25px;
-
     background-color: white;
-    
-    padding: 15px 25px;
 }
 
 @media screen and (max-width: 512px) {
@@ -333,15 +380,7 @@ header nav {
 }
 
 #consultation-recette nav {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 25px;
-
     background-color: lightgray;
-
-    width: fit-content;
-    
-    padding: 15px 25px;
 }
 
 @media screen and (max-width: 1024px) {
