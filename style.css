@@ -192,14 +192,15 @@ header nav {
     left: 0;
     z-index: -1;
 
-    animation: liste-part 1500ms;
+    animation: liste-part;
+    animation-duration: 0;
 }
 
 #liste-recettes.visible {
     position: relative;
     z-index: auto;
 
-    animation: liste-arrive 1500ms;
+    animation: liste-arrive;
 }
 
 #liste-recettes > ul {
@@ -266,14 +267,15 @@ header nav {
     left: 0;
     z-index: -1;
 
-    animation: recette-part 1500ms;
+    animation: recette-part;
+    animation-duration: 0;
 }
 
 #consultation-recette.visible {
     position: relative;
     z-index: auto;
 
-    animation: recette-arrive 1500ms;
+    animation: recette-arrive;
 }
 
 #consultation-recette > button {
@@ -375,7 +377,6 @@ footer p {
 @keyframes liste-part {
     from {
         z-index: auto;
-        transform: translateX(0);
     }
     to {
         z-index: auto;
@@ -387,15 +388,11 @@ footer p {
     from {
         transform: translateX(-100%);
     }
-    to {
-        transform: translateX(0);
-    }
 }
 
 @keyframes recette-part {
     from {
         z-index: auto;
-        transform: translateX(0);
     }
     to {
         z-index: auto;
@@ -406,8 +403,5 @@ footer p {
 @keyframes recette-arrive {
     from {
         transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
     }
 }
