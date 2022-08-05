@@ -12,13 +12,20 @@
 
     <body>
         <header>
-            <img src="images/icones/logo.svg" alt="Logo">
+            <a href="">
+                <img src="images/icones/logo.svg" alt="Logo">
+            </a>
 
             <input type="checkbox">
             <nav>
-                <button>Ajouter</button>
-                <button>Bouton</button>
-                <button>Bouton</button>
+                <div id="ajout">
+                    <button onclick="afficher_options('ajout')">Ajouter</button>
+                    <fieldset disabled>
+                        <button onclick="fermer_options()"><img src="images/icones/annuler.svg" alt="X"></button>
+                        <button onclick="fermer_options(); ajouter_recette()"><img src="images/icones/valider.svg" alt="V"></button>
+                    </fieldset>
+                </div>
+                <input id="recherche" type="text" onchange="afficher_liste_recettes()" placeholder="Rechercher">
             </nav>
         </header>
 
@@ -66,10 +73,10 @@
             <section id="consultation-recette">
                 <button onclick="defiler()"><img src="images/icones/retour.svg"></button>
                 <article>
-                    <h1>Titre</h1>
+                    <h1 id="titre-recette">Titre</h1>
                     <section>
                         <h2>Ingrédients :</h2>
-                        <ul>
+                        <ul id="ingredients-recette">
                             <li>Ingrédient 1</li>
                             <li>Ingrédient 2</li>
                             <li>Ingrédient 3</li>
@@ -78,7 +85,7 @@
                     </section>
                     <section>
                         <h2>Étapes :</h2>
-                        <ol>
+                        <ol id="etapes-recette">
                             <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis animi at neque asperiores! Tempora placeat omnis nobis ad eveniet! Dolore voluptas animi officia illum, accusantium quidem aspernatur. Sit magnam, officiis eos quidem explicabo ipsa, molestiae neque ducimus maiores, dicta eum amet? Maxime quia eos beatae, eveniet nesciunt, perspiciatis, quaerat repellendus aperiam quasi iure consectetur? Cum laboriosam odit rerum. Distinctio, omnis.
                             </p></li>
                             <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, ipsam!</p></li>
@@ -87,23 +94,7 @@
                             <li><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt placeat ratione repudiandae dignissimos dolor corrupti quia veniam quibusdam quod voluptates perspiciatis, architecto ducimus. Asperiores velit ipsa repudiandae ea aliquam rerum itaque distinctio cumque vitae ipsam maxime accusamus quaerat tempore totam laboriosam aut sit provident nisi incidunt perspiciatis, earum vel! Quidem labore animi dicta soluta nemo quas voluptatum dolorum esse recusandae non, quos odit, ut architecto accusantium numquam illo nam saepe exercitationem iure id. Quaerat distinctio maxime, necessitatibus beatae sed quos!</p></li>
                         </ol>
                     </section>
-                    <nav>
-                        <div id="edition">
-                            <button onclick="demander_confirmation_edition()">Éditer</button>
-                            <div>
-                                <button><img src="images/icones/annuler.svg" alt="X"></button>
-                                <button><img src="images/icones/valider.svg" alt="V"></button>
-                            </div>
-                        </div>
-
-                        <div id="suppression">
-                            <button onclick="demander_confirmation_suppression()">Supprimer</button>
-                            <div>
-                                <button><img src="images/icones/annuler.svg" alt="X"></button>
-                                <button><img src="images/icones/valider.svg" alt="V"></button>
-                            </div>
-                        </div>
-                    </nav>
+                    <nav id="menu-recette"></nav>
                 </article>
             </section>
         </main>

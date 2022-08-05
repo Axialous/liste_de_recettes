@@ -61,30 +61,64 @@ nav {
     width: fit-content;
 }
 
-nav div {
+nav div, nav fieldset {
     display: grid;
     gap: 0px;
 
     transition: 250ms 125ms;
 }
 
-nav div.options-visibles div, nav div.options-visibles {
+nav .options-visibles, nav .options-visibles fieldset {
     gap: 15px;
 
     transition: 250ms;
 }
 
-nav div div img {
+nav fieldset img {
     height: 0;
     overflow: hidden;
 
     transition: 250ms;
 }
 
-nav div.options-visibles div img {
+nav .options-visibles fieldset img {
     height: 24px;
 
     transition: 250ms 125ms;
+}
+
+nav input {
+    outline: solid 2px hsla(33, 100%, 50%, 0%);
+    outline-offset: 5px;
+
+    width: 85px;
+
+    cursor: pointer;
+
+    transition: 250ms;
+}
+
+nav input:hover, nav input:focus {
+    color: hsl(33, 100%, 50%);
+
+    outline: solid 2px hsla(33, 100%, 50%, 50%);
+    outline-offset: 5px;
+}
+
+nav input:focus {
+    width: 170px;
+
+    cursor: text;
+}
+
+nav input::placeholder {
+    color: hsl(0, 0%, 25%);
+
+    transition: 500ms;
+}
+
+nav input:focus::placeholder {
+    color: hsl(0, 0%, 75%);
 }
 
 nav button {
@@ -103,16 +137,6 @@ nav button {
     transition: 250ms;
 }
 
-nav div div button {
-    outline: none;
-}
-
-nav div div button:hover, nav div div button:focus {
-    outline: none;
-
-    padding-left: 20px;
-}
-
 nav button:hover, nav button:focus {
     color: hsl(33, 100%, 50%);
 
@@ -122,11 +146,25 @@ nav button:hover, nav button:focus {
     outline-offset: 5px;
 }
 
+nav fieldset button {
+    outline: none;
+}
+
+nav fieldset button:hover, nav fieldset button:focus {
+    outline: none;
+
+    padding-left: 16px;
+}
+
 .grisee {
     filter: grayscale(75%);
 }
 
 /* STRUCTURE GÉNÉRALE */
+
+html {
+    overflow: overlay;
+}
 
 body {
     display: flex;
@@ -153,6 +191,8 @@ header, footer {
 
 main > section {
     padding: 0 calc(15vw - 30px);
+
+    width: 100vw;
 
     transition: padding 250ms;
 }
@@ -265,6 +305,8 @@ header nav {
 
     padding: 25px;
 
+    width: 100%;
+
     transition: 125ms;
 }
 
@@ -284,7 +326,7 @@ header nav {
 .resume-recette ul li {
     display: grid;
     grid-auto-flow: column;
-    gap: 3px;
+    gap: 5px;
 
     font-weight: 600;
 }

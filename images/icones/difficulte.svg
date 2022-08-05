@@ -42,12 +42,12 @@
      id="layer1">
     <path
        id="path5612"
-       style="fill:#ff7e33;fill-opacity:1;stroke-width:17.1418;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#993800;fill-opacity:1;stroke-width:17.1418;stroke-linecap:round;stroke-linejoin:round"
        d="M 30.033203 0 A 9.9999997 9.9999997 0 0 0 20 9.9316406 A 9.9999997 9.9999997 0 0 0 29.898438 20 A 9.9999997 9.9999997 0 0 0 40 10.134766 L 40 10 A 9.9999997 9.9999997 0 0 0 30.033203 0 z M 30.017578 5 A 4.9999998 4.9999998 0 0 1 35 10 L 35 10.068359 A 4.9999998 4.9999998 0 0 1 29.949219 15 A 4.9999998 4.9999998 0 0 1 25 9.9667969 A 4.9999998 4.9999998 0 0 1 30.017578 5 z "
        transform="scale(0.26458333)" />
     <path
        id="path7824-4"
-       style="fill:#cc4b00;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:#ff7e33;fill-opacity:1;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 20,17.5 c -5,1e-6 -5,1e-6 -7.072266,4.490234 L 2.0917969,45.46875 C 0,50.000002 0,50.000002 0,54.992188 v 0.0098 C 0.00585822,55.001292 0.0117176,55.000641 0.01757813,55 0,60.000001 0,60.000001 5,60 h 50.005859 c -0.002,-0.01106 -0.0039,-0.02213 -0.0059,-0.0332 5.000042,0.0332 5.000042,0.0332 5,-4.964844 v 0 c 4.2e-5,-5.001954 4.2e-5,-5.001954 -2.070271,-9.488284 L 47.070312,21.986328 C 45.000001,17.500001 45.000001,17.500001 40.005859,17.5 Z"
        transform="scale(0.26458333)"
        sodipodi:nodetypes="ccccccccccccccc" />
@@ -64,14 +64,14 @@
          y="5.1512799" /></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.21207px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;stroke-width:0.180302;fill:#ff7e33;fill-opacity:1"
-       x="3.5426462"
-       y="12.800717"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.86635px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#993800;fill-opacity:1;stroke-width:0.171658"
+       x="3.3027141"
+       y="14.231654"
        id="text18382"><tspan
          sodipodi:role="line"
          id="tspan18380"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Cambria;-inkscape-font-specification:Cambria;stroke-width:0.180302;fill:#ff7e33;fill-opacity:1"
-         x="3.5426462"
-         y="12.800717">KG</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#993800;fill-opacity:1;stroke-width:0.171658"
+         x="3.3027141"
+         y="14.231654">KG</tspan></text>
   </g>
 </svg>
