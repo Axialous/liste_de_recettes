@@ -23,6 +23,14 @@
     outline: none;
 }
 
+/* RESSOURCES */
+
+@keyframes texte-clignote {
+    50% {
+        color: hsl(0, 100%, 50%);
+    }
+}
+
 /* ÉLÉMENTS GÉNÉRAUX */
 
 h1 {
@@ -92,9 +100,11 @@ nav input {
     outline-offset: 5px;
 
     width: 85px;
+    height: min-content;
 
     cursor: pointer;
 
+    animation: texte-clignote 1500ms infinite;
     transition: 250ms;
 }
 
@@ -103,6 +113,8 @@ nav input:hover, nav input:focus {
 
     outline: solid 2px hsla(33, 100%, 50%, 50%);
     outline-offset: 5px;
+
+    animation: none;
 }
 
 nav input:focus {
@@ -318,12 +330,14 @@ header nav {
     font-style: oblique;
 }
 
-.resume-recette ul {
+.resume-recette ul,
+#indicateurs-recette {
     display: flex;
     justify-content: space-between;
 }
 
-.resume-recette ul li {
+.resume-recette ul li,
+#indicateurs-recette li {
     display: grid;
     grid-auto-flow: column;
     gap: 5px;
@@ -331,19 +345,22 @@ header nav {
     font-weight: 600;
 }
 
-.resume-recette ul img {
+.resume-recette ul img,
+#indicateurs-recette img {
     width: 18px;
     height: 18px;
 }
 
 @media screen and (max-width: 512px) {
 
-    .resume-recette ul {
+    .resume-recette ul,
+    #indicateurs-recette {
         display: grid;
         gap: 10px;
     }
 
-    .resume-recette ul li {
+    .resume-recette ul li,
+    #indicateurs-recette li {
         width: min-content;
     }
 }
@@ -395,29 +412,70 @@ header nav {
     gap: 10px;
 }
 
-#consultation-recette ul{
+#description-recette {
+    font-style: oblique;
+}
+
+#ingredients-recette{
     display: grid;
+
     gap: 7px;
 }
 
-#consultation-recette ul li {
+#ingredients-recette li {
     list-style-type: '– ';
 
     margin-left: 38px;
 }
 
-#consultation-recette ol {
+#ingredients-recette li div,
+#etapes-recette li div {
+    display: grid;
+    gap: 3px;
+}
+
+#ingredients-recette nav,
+#etapes-recette nav {
+    gap: 10px;
+
+    border-radius: 10px;
+
+    padding: 6px 10px;
+}
+
+#consultation-recette li nav {
+    border-radius: 0 0 10px 10px;
+}
+
+#ingredients-recette nav button,
+#etapes-recette nav button {
+    outline: none;
+}
+
+#ingredients-recette nav button:hover, #ingredients-recette nav button:focus,
+#etapes-recette nav button:hover, #etapes-recette nav button:focus {
+    outline: none;
+
+    padding-top: 16px;
+}
+
+#ingredients-recette nav button img,
+#etapes-recette nav button img {
+    width: 24px;
+}
+
+#etapes-recette {
     display: grid;
     gap: 13px;
 }
 
-#consultation-recette ol li {
+#etapes-recette li {
     list-style-type: decimal;
 
     margin-left: 38px;
 }
 
-#consultation-recette ol p {
+#etapes-recette p {
     text-align: justify;
 }
 
