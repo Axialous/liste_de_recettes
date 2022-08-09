@@ -84,6 +84,8 @@ nav {
 
     background-color: var(--tertiaire);
 
+    border-radius: 5px;
+
     padding: 15px 25px;
 
     width: fit-content;
@@ -216,7 +218,7 @@ main {
 }
 
 header, footer {
-    padding: 10px 15vw;
+    padding: 15px 15vw;
 
     transition: padding 250ms;
 }
@@ -238,7 +240,7 @@ main > section > article {
 
 @media screen and (max-width: 1024px) {
     header, footer {
-        padding: 30px;
+        padding: 5px 30px;
     }
 
     main > section {
@@ -265,7 +267,7 @@ header::after {
     content: "";
 
     position: absolute;
-    bottom: -14.5px;
+    bottom: -14px;
     left: 0;
 
     border-top: solid 15px;
@@ -276,11 +278,13 @@ header::after {
 
 header a {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
-header img{
-    width:170px;
+header a img{
+    height:100px;
+
+    transition: 250ms;
 }
 
 header a h1 {
@@ -305,6 +309,10 @@ header input[type=checkbox] {
 }
 
 @media screen and (max-width: 512px) {
+
+    header a img{
+        height:75px;
+    }
 
     header input[type=checkbox] {
         display: block;
@@ -561,7 +569,7 @@ footer::before {
     content: "";
 
     position: absolute;
-    top: -14.5px;
+    top: -14px;
     left: 0;
 
     border-top: solid 15px;
