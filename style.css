@@ -1,7 +1,7 @@
 /* INITIALISATION */
 
 *{
-    color: hsl(0, 0%, 25%);
+    color: hsl(10, 25%, 25%);
     font-family: Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
@@ -31,14 +31,32 @@
     }
 }
 
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url(polices/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+:root {
+    --primaire: linear-gradient(to bottom, hsl(10, 85%, 60%), hsl(20, 100%, 65%));
+    --primaire-inverse: linear-gradient(to top, hsl(10, 85%, 60%), hsl(20, 100%, 65%));
+    --secondaire: linear-gradient(to right, hsl(20, 100%, 80%), hsl(30, 100%, 85%));
+    --tertiaire: hsl(25, 90%, 85%);
+    --quaternaire: hsl(20, 100%, 95%);
+}
+
 /* ÉLÉMENTS GÉNÉRAUX */
 
 h1 {
     font-size: 36px;
+    font-family: 'PlayfairDisplay', serif;
+    font-weight: 900;
 }
 
 h2 {
     font-size: 22px;
+    font-family: 'PlayfairDisplay', serif;
+    font-weight: 900;
+    text-decoration: underline;
 }
 
 button {
@@ -48,7 +66,7 @@ button {
 :not(nav, li) > button,
 :not(nav) > input {
     outline: solid 2px hsla(30, 0%, 50%, 0%);
-    border: solid 1px hsl(30, 0%, 50%);
+    border: solid 1px hsl(30, 25%, 50%);
 
     transition: 250ms;
 }
@@ -63,6 +81,8 @@ nav {
     display: grid;
     grid-auto-flow: column;
     gap: 25px;
+
+    background-color: var(--tertiaire);
 
     padding: 15px 25px;
 
@@ -124,13 +144,13 @@ nav input:focus {
 }
 
 nav input::placeholder {
-    color: hsl(0, 0%, 25%);
+    color: hsl(10, 25%, 25%);
 
     transition: 500ms;
 }
 
 nav input:focus::placeholder {
-    color: hsl(0, 0%, 75%);
+    color: hsl(10, 25%, 70%);
 }
 
 nav button {
@@ -190,7 +210,7 @@ main {
 
     flex: 1;
 
-    background-color: white;
+    background-color: var(--quaternaire);
 
     overflow: hidden;
 }
@@ -207,6 +227,13 @@ main > section {
     width: 100vw;
 
     transition: padding 250ms;
+}
+
+main > section > ul,
+main > section > article {
+    background-color: var(--quaternaire);
+
+    padding: 45px 30px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -231,7 +258,32 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    background-color: lightgray;
+    background: var(--primaire);
+}
+
+header::after {
+    content: "";
+
+    position: absolute;
+    bottom: -14.5px;
+    left: 0;
+
+    border-top: solid 15px;
+    border-image: url(images/vague_haut.svg) 15 repeat;
+
+    width: 100vw;
+}
+
+header a {
+    display: flex;
+    align-items: baseline;
+}
+
+header a h1 {
+    font-size: 48px;
+    color: var(--tertiaire);
+
+    margin-left: 16px;
 }
 
 header input[type=checkbox] {
@@ -244,10 +296,8 @@ header input[type=checkbox] {
 
     width: 46px;
     height: 46px;
-}
 
-header nav {
-    background-color: white;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 512px) {
@@ -267,7 +317,7 @@ header nav {
 
         width: 0;
 
-        padding: 15px 0;
+        padding: 30px 0 15px;
 
         overflow: hidden;
 
@@ -305,15 +355,15 @@ header nav {
 #liste-recettes > ul {
     display: grid;
     gap: 25px;
-    
-    padding: 30px;
 }
 
 .resume-recette {
     display: grid;
     gap: 15px;
 
-    background-color: lightgray;
+    background: var(--secondaire);
+
+    border-radius: 10px;
 
     padding: 25px;
 
@@ -403,8 +453,6 @@ header nav {
 #consultation-recette > article {
     display: grid;
     gap: 25px;
-    
-    padding: 30px;
 }
 
 #consultation-recette article section {
@@ -479,10 +527,6 @@ header nav {
     text-align: justify;
 }
 
-#consultation-recette nav {
-    background-color: lightgray;
-}
-
 @media screen and (max-width: 1024px) {
 
     #consultation-recette > button {
@@ -501,10 +545,25 @@ header nav {
 /* PIED DE PAGE */
 
 footer {
+    position: relative;
+
     display: flex;
     justify-content: center;
 
-    background-color: gray;
+    background: var(--primaire-inverse);
+}
+
+footer::before {
+    content: "";
+
+    position: absolute;
+    top: -14.5px;
+    left: 0;
+
+    border-top: solid 15px;
+    border-image: url(images/vague_bas.svg) 15 repeat;
+
+    width: 100vw;
 }
 
 footer p {
