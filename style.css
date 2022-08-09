@@ -216,7 +216,7 @@ main {
 }
 
 header, footer {
-    padding: 30px 15vw;
+    padding: 10px 15vw;
 
     transition: padding 250ms;
 }
@@ -279,6 +279,10 @@ header a {
     align-items: baseline;
 }
 
+header img{
+    width:170px;
+}
+
 header a h1 {
     font-size: 48px;
     color: var(--tertiaire);
@@ -296,7 +300,7 @@ header input[type=checkbox] {
 
     width: 46px;
     height: 46px;
-
+    
     cursor: pointer;
 }
 
@@ -360,7 +364,7 @@ header input[type=checkbox] {
 .resume-recette {
     display: grid;
     gap: 15px;
-
+    
     background: var(--secondaire);
 
     border-radius: 10px;
