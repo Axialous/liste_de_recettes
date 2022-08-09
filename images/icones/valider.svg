@@ -42,7 +42,7 @@
      id="layer1">
     <path
        id="rect867"
-       style="fill:#00b200;fill-opacity:1;stroke-width:4.51691;stroke-linecap:round;stroke-linejoin:round"
+       style="fill:#00b21e;fill-opacity:1;stroke-width:4.51691;stroke-linecap:round;stroke-linejoin:round"
        d="M 10 0 C 4.4600003 1.1842379e-15 0 4.4600003 0 10 L 0 50 C 1.1842379e-15 55.54 4.4600003 60 10 60 L 50 60 C 55.54 60 60 55.54 60 50 L 60 10 C 60 4.4600003 55.54 0 50 0 L 10 0 z M 10 5 L 50 5 C 52.77 5 55 7.2300001 55 10 L 55 50 C 55 52.77 52.77 55 50 55 L 10 55 C 7.2300001 55 5 52.77 5 50 L 5 10 C 5 7.2300001 7.2300001 5 10 5 z M 10 10 L 27.5 50 L 32.5 50 L 50 10 L 45 10 L 30 44.285156 L 15 10 L 10 10 z "
        transform="scale(0.26458333)" />
     <path
